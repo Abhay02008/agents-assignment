@@ -373,3 +373,50 @@ The Agents framework is under active development in a rapidly evolving field. We
 </tbody>
 </table>
 <!--END_REPO_NAV-->
+
+# Intelligent Interruption Handler (Assignment Submission)
+
+This repository includes my implementation of an **Intelligent Interruption Handler** for the voice agent.  
+The goal of this feature is to make the agent behave more naturally during conversations by:
+
+- Ignoring soft backchannel words such as “yeah”, “ok”, “hmm” while the assistant is speaking.  
+- Immediately stopping speech when the user says a command word such as “stop”, “wait”, “no”.  
+- Passing normal user text to the LLM when the agent is silent.
+
+---
+
+## Files Added / Updated
+
+- `examples/voice_agents/intelligent_interrupt_agent.py`  
+- `examples/voice_agents/interrupt_handler.py`  
+- `examples/voice_agents/requirements.txt` (updated to include correct dependencies)
+
+---
+
+## How to Test This Feature
+
+Run the agent:
+python intelligent_interrupt_agent.py start
+
+
+Then try the following:
+
+- Start speaking **while the AI is talking**.  
+  - Saying “yeah / ok / hmm” → assistant **continues talking** (ignored).  
+  - Saying “stop / wait / no” → assistant **immediately stops speaking**.  
+  - Saying anything else → assistant **stops and listens**.
+
+---
+
+## Proof Video
+
+A short demonstration video is included in the Pull Request showing:
+
+- AI ignores “yeah” while speaking.  
+- AI responds to “yeah” when silent.  
+- AI interrupts immediately when I say “stop / wait / no”.
+
+**Video link:**  
+➡️ *https://drive.google.com/file/d/1fIzqC5DPmEhqKfzIdy9MXZRBE9OKWMau/view?usp=sharing*
+
+
